@@ -26,16 +26,16 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Yash Anand"),
       ),
-      body: Container(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("Yashaswi Anand \n Computer Science Student"),
+            Text("Yashaswi Anand",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.brown),),
             SizedBox(height: 20,),
-            Text("Patna"),
+            Text("Computer Science Student",style: TextStyle(fontSize: 25,fontWeight: FontWeight.normal, color: Colors.blue),),
           ],
-        )
+        ),
       ),
     );
   }
