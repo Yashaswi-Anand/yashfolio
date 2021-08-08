@@ -27,9 +27,15 @@ class MyHomePage extends StatelessWidget {
         title: Text("Yash Anand"),
       ),
       body: Container(
-        child: Center(
-          child: Text("Yashaswi Anand \n Computer Science Student"),
-        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text("Yashaswi Anand \n Computer Science Student"),
+            SizedBox(height: 20,),
+            Text("Patna"),
+          ],
+        )
       ),
     );
   }
