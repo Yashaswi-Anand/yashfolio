@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
+import 'Screens/homePage.dart';
+import 'package:get/get.dart';
+//import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,30 +17,52 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: Demo(),
     );
   }
 }
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+
+class Demo extends StatelessWidget {
+  const Demo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Yash Anand"),
+        title: Center(child: Text("Yashaswi Anand")),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+      body:  VxDevice(
+        mobile: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("Yash",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blue,fontSize: 30),),
+              SizedBox(height: 10,),
+              Text("CSE",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.brown,fontSize: 30),),
+              SizedBox(height: 10,),
+              Text("Btech",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blue,fontSize: 30),),
+              SizedBox(height: 10,),
+              Text("Bihar",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.brown,fontSize: 30),),
+            ],
+          ),
+        ), web: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text("Yashaswi Anand",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.brown),),
-            SizedBox(height: 20,),
-            Text("Computer Science Student",style: TextStyle(fontSize: 25,fontWeight: FontWeight.normal, color: Colors.blue),),
+            Text("Yash",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blue,fontSize: 30),),
+            SizedBox(width: 10,),
+            Text("CSE",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.brown,fontSize: 30),),
+            SizedBox(width: 10,),
+            Text("Btech",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blue,fontSize: 30),),
+            SizedBox(width: 10,),
+            Text("Bihar",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.brown,fontSize: 30),),
           ],
-        ),
       ),
+        ),
+      )
     );
   }
 }
+
