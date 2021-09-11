@@ -1,8 +1,29 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
-import '../main.dart';
+class HomePages extends StatelessWidget {
+  const HomePages({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ScreenTypeLayout(
+        mobile: Container(color:Colors.blue[100],
+          child: Center(child: Text("Mobile  View",
+            style: TextStyle(color: Colors.black,fontSize: 50,fontWeight: FontWeight.bold,),)),),
+        tablet: Container(color: Colors.yellow[100],
+          child: Center(child: Text("Tablet  View",
+            style: TextStyle(color: Colors.black,fontSize: 50,fontWeight: FontWeight.bold,),)),),
+        desktop: Container(color: Colors.red[100],
+          child: Center(child: Text("Desktop  View",
+            style: TextStyle(color: Colors.black,fontSize: 50,fontWeight: FontWeight.bold,),)),),
+      ),
+    );
+  }
+}
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -95,9 +116,9 @@ class HomeScreen extends StatelessWidget {
                           FlatButton.icon(
                             onPressed: (){
                               print(MediaQuery.of(context).size.width);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              /*Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => Demo()
-                              ));
+                              ));*/
                             },
                             icon: Icon(Icons.video_library),
                             label: Text("Next"),
@@ -117,7 +138,7 @@ class HomeScreen extends StatelessWidget {
               ),
 
             )
-            :screenSize.width > 360 && screenSize.width <580 ?
+                :screenSize.width > 360 && screenSize.width <580 ?
             Container(
               //for small
               width: screenSize.width,
@@ -149,9 +170,9 @@ class HomeScreen extends StatelessWidget {
                           FlatButton.icon(
                             onPressed: (){
                               print(MediaQuery.of(context).size.width);
-                              Navigator.of(context).push(MaterialPageRoute(
+                              /*Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => Demo()
-                              ));
+                              ));*/
                             },
                             icon: Icon(Icons.video_library),
                             label: Text("Next"),
@@ -198,9 +219,9 @@ class HomeScreen extends StatelessWidget {
                                 FlatButton.icon(
                                   onPressed: (){
                                     print(MediaQuery.of(context).size.width);
-                                    Navigator.of(context).push(MaterialPageRoute(
+                                    /*Navigator.of(context).push(MaterialPageRoute(
                                         builder: (context) => Demo()
-                                    ));
+                                    ));*/
                                   },
                                   icon: Icon(Icons.video_library),
                                   label: Text("Next"),
